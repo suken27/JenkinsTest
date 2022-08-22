@@ -18,6 +18,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying the application...'
+        sh './gradlew clean bootJar --no-daemon'
       }
     }
 

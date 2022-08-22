@@ -9,6 +9,10 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
 }
 
 repositories {
@@ -17,11 +21,16 @@ repositories {
 }
 
 dependencies {
+
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
+
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
 }
 
 application {
@@ -32,4 +41,9 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+// Runs the whole application
+tasks.named("bootJar") {
+	launchScript()
 }
