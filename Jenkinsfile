@@ -18,7 +18,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying the application...'
-        sh './gradlew clean bootJar --no-daemon'
+        sh './gradlew clean bootJar --no-daemon --args=--server.port=8888'
       }
     }
 
