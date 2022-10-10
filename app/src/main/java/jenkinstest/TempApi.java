@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.web.bind.annotation.GetMapping;

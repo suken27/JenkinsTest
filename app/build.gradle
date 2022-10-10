@@ -42,8 +42,3 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-
-// Runs the whole application
-tasks.named("bootJar") {
-	launchScript()
-}
